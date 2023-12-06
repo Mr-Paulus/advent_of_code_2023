@@ -1,9 +1,12 @@
 from pathlib import Path
 
 def CheckBag(Input):
-    GivenPoint = int(Input[5:Input.find(':')])
+
     Input = Input[Input.find(':') + 2:]
-    Point = True
+    
+    RedNeedid = 0
+    BlueNeedid = 0
+    GreenNeedid = 0
 
     while (len(Input) > 0):
 
@@ -40,29 +43,28 @@ def CheckBag(Input):
                 GreenCheck = False
 
         if (RedCheck == True):
-            if (int(Input[0:Low-1]) > 12):
-                Point = False
-                break
+            if (int(Input[0:Low-1]) > RedNeedid):
+                RedNeedid = int(Input[0:Low-1])
+            
             Input = Input[Low+5:]
 
 
         elif (GreenCheck == True):
-            if (int(Input[0:Low-1]) > 13):
-                Point = False
-                break
-            Input = Input[Low+7:]
+            if (int(Input[0:Low-1]) > BlueNeedid):
+                BlueNeedid = int(Input[0:Low-1])
+
+            Input = Input[Low+7:]                
             
         else:
-            if (int(Input[0:Low-1]) > 14):
-                Point = False
-                break      
+            if (int(Input[0:Low-1]) > GreenNeedid):
+                GreenNeedid = int(Input[0:Low-1])
+
             Input = Input[Low+6:]
 
-    if (Point):
-        return GivenPoint
-    else:
-        return 0
-    
+    return RedNeedid * BlueNeedid * GreenNeedid
+
+                
+
 def CalculateScore(Input):
     Score = 0
 
