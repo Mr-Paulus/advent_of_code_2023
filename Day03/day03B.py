@@ -100,5 +100,4 @@ def CalculateScore(Input):
 
     return Score                     
                 
-
 print(CalculateScore('day03input.txt'))
