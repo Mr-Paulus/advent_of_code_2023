@@ -88,10 +88,6 @@ def CalculateScore(Input):
     #Find all gears
     for x in range(0, len(InputPuzzle)):
         if InputPuzzle[x] == '*':
-            Pos1 = -1
-            Number1 = []
-            Number2 = []
-
             Pos1 = FindNumberUpDown(InputPuzzle ,x, Rowsize, MaxSize, [], Search)
 
             if (Pos1 != -1):
