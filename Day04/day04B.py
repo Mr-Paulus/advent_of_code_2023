@@ -69,4 +69,3 @@ def GetScore(Input):
     return TotalCards
      
 print(GetScore('day04input.txt'))
-#check 123
