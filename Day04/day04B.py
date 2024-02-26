@@ -66,9 +66,6 @@ def GetScore(Input):
         LineCheck += 1
         InputPuzzle = InputPuzzle[InputPuzzle.find('\n')+ 1:] 
 
-    
     return TotalCards
-
-            
-        
+     
 print(GetScore('day04input.txt'))
